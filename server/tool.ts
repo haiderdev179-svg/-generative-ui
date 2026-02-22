@@ -12,6 +12,21 @@ export function initTools(database: DatabaseSync){
         ({ title, amount }) => {
             console.log('title , amount :', title, amount);
 
+            //todo: Do proper args check e.g: (title or amount is valid || not empty)
+
+            //todo: add error handling here
+
+            //storing the date
+            const date = new Date().toISOString().split('T')[0];
+
+            //here we do database query
+            const statement = database.prepare(
+            `INSERT INTO EXPENSES (title, amount, date) VALUES (?, ?, ?)`
+            );
+ 
+            statement.run(title, amount, date)
+             
+
             JSON.stringify({ status: 'success!' });
         },
         {
