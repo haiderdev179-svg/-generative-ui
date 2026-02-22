@@ -8,6 +8,7 @@
         "@langchain/core": "^1.1.27",
         "@langchain/langgraph": "^1.1.5",
         "@langchain/openai": "^1.2.9",
+        "zod": "^4.3.6",
       },
       "devDependencies": {
         "@types/bun": "latest",
