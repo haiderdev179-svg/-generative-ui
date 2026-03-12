@@ -36,12 +36,14 @@ async function callModel(state: typeof MessagesAnnotation.State) {
     {
       role: "system",
       content: `You are an expense tracking assistant. Current datetime: ${new Date().toISOString()}.
-        Only call the add_expense tool when the user clearly provides:
+        Only call the add-expense tool when the user clearly provides:
         - a numeric amount
         - a description of the expense
         Do NOT call any tool for greetings, small talk, or unclear messages.
         If required information is missing, ask a short clarifying question instead of calling a tool.
-        `,
+        
+        Call get-expenses tool to get the list of expenses for given date range,
+        Call generate-expense-chart tool only when user needs to visualize the expenses.`,
     },
     //sending the message history from state by spreading
     ...state.messages,
@@ -57,15 +59,23 @@ function shouldContinue(state: typeof MessagesAnnotation.State) {
   const messages = state.messages;
   //getting the last message
   const lastMessage = messages.at(-1) as AIMessage;
-
+  
   //Checking if tool_call happen through the last message we get
   if (lastMessage.tool_calls?.length) {
     //if the the length is true it means tool call happen so we are routing to tool node
     return "tools";
   }
-
+  
   //if tool call not happen then we are routing to end node
   return END;
+};
+
+//12:shouldCallModel function for conditionalEdge from tool node to callModel or  end
+function shouldCallModel(state: typeof MessagesAnnotation.State) {
+ 
+  //todo: change this when chart tool is implemented
+  return 'callModel';
+
 }
 
 //8:Building the Graph
@@ -76,8 +86,11 @@ const graph = new StateGraph(MessagesAnnotation)
   .addConditionalEdges("callModel", shouldContinue, {
     [END]: END,
     tools: "tools",
+  })
+  .addConditionalEdges('tools', shouldCallModel, {
+    callModel: "callModel",
   });
-
+  
 //10:Compiling the graph
 const agent = graph.compile({
   checkpointer: new MemorySaver(),
@@ -91,7 +104,9 @@ async function main() {
         {
           role: "user",
         //   content: "Hi",
-          content: "I bought an kawasaki ninja  for 350000",
+          // content: "I bought an flowers for 2500pkr",
+          // content: "how much i have spend total till date?",
+          content: "Can you visualize how much i spent this year till now group by months?",
         },
       ],
     },
