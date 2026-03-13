@@ -1,6 +1,6 @@
 import { tool } from "@langchain/core/tools";
 import type { DatabaseSync } from "node:sqlite";
-import z from "zod";
+import z, { string } from "zod";
 
 
 
@@ -72,8 +72,27 @@ export function initTools(database: DatabaseSync){
 
             console.log('args: ', from, to, groupBy);
 
+            let sqlGroupBy : string;
+
+            switch(groupBy){
+                case 'month':
+                    sqlGroupBy = `strftime('%Y-%m', date)`;
+                    break;
+
+                case 'week':
+                    sqlGroupBy = `strftime('%Y-W%W', date)`;
+                    break;
+
+                case 'date':
+                    sqlGroupBy = `date`;
+                    break;
+                    
+                default: 
+                    sqlGroupBy = `strftime('%Y-%m', date)`;
+            };
+
             const query = `
-            SELECT strftime('%Y-%m', date) as period, SUM(amount) as total
+            SELECT ${sqlGroupBy} as period, SUM(amount) as total
             FROM expenses 
             WHERE date BETWEEN ? AND ? 
             GROUP BY period 

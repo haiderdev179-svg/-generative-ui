@@ -106,7 +106,7 @@ async function main() {
         //   content: "Hi",
           // content: "I bought an flowers for 2500pkr",
           // content: "how much i have spend total till date?",
-          content: "Can you visualize how much i spent this year till now group by months?",
+          content: "Can you visualize how much i spent this year till now group by week?",
         },
       ],
     },
