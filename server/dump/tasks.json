@@ -1,0 +1,55 @@
+Chunk {
+  id: '9ae60b3b-dcff-5648-b3ec-83596b421742',
+  name: 'callModel',
+  input: {
+    messages: [
+      HumanMessage {
+        "id": "1e3f7b5b-7662-4907-abe3-e69ca2a54c58",
+        "content": "Hi",
+        "additional_kwargs": {},
+        "response_metadata": {}
+      }
+    ]
+  },
+  triggers: [ 'branch:to:callModel' ],
+  interrupts: []
+}
+Chunk {
+  id: '9ae60b3b-dcff-5648-b3ec-83596b421742',
+  name: 'callModel',
+  result: {
+    messages: [
+      AIMessage {
+        "id": "chatcmpl-DWphWjlXDtgm3Sn26SRHJs8Gf2txV",
+        "content": "Hi — how can I help with your expenses today? \n\nYou can:\n- Add an expense (e.g., \"Add $12.50 for lunch at Cafe\" or \"Spent 20 on groceries\")\n- View expenses for a date range (e.g., \"Show my expenses from 2026-04-01 to 2026-04-20\")\n- Generate a chart of expenses (by month/week/date)\n\nWhat would you like to do?",
+        "additional_kwargs": {},
+        "response_metadata": {
+          "tokenUsage": {
+            "promptTokens": 399,
+            "completionTokens": 230,
+            "totalTokens": 629
+          },
+          "finish_reason": "stop",
+          "model_provider": "openai",
+          "model_name": "gpt-5-mini-2025-08-07"
+        },
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": {
+          "output_tokens": 230,
+          "input_tokens": 399,
+          "total_tokens": 629,
+          "input_token_details": {
+            "audio": 0,
+            "cache_read": 0
+          },
+          "output_token_details": {
+            "audio": 0,
+            "reasoning": 128
+          }
+        }
+      }
+    ]
+  },
+  interrupts: []
+}

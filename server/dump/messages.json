@@ -1,0 +1,1024 @@
+Chunk [ 
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": "",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": "Hi",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " —",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " how",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " can",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " I",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " help",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " with",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " your",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " expenses",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " today",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": "?",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " (",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": "You",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " can",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " add",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " an",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " expense",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": ",",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " view",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " expenses",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " for",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " a",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " date",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " range",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": ",",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " or",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " generate",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " a",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": " chart",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": ".)",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]
+Chunk [
+  AIMessageChunk {
+    "id": "chatcmpl-DWpWnlAC829NqYqzacjSCGj8PcoVi",
+    "content": "",
+    "additional_kwargs": {},
+    "response_metadata": {
+      "model_provider": "openai",
+      "usage": {}
+    },
+    "tool_calls": [],
+    "tool_call_chunks": [],
+    "invalid_tool_calls": []
+  },
+  {
+    tags: [],
+    name: undefined,
+    thread_id: '1',
+    langgraph_step: 1,
+    langgraph_node: 'callModel',
+    langgraph_triggers: [ 'branch:to:callModel' ],
+    langgraph_path: [ '__pregel_pull', 'callModel' ],
+    langgraph_checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    __pregel_task_id: 'b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    checkpoint_ns: 'callModel:b7d314c5-c039-59e7-a083-b46f66cd0f80',
+    ls_provider: 'openai',
+    ls_model_name: 'gpt-5-mini',
+    ls_model_type: 'chat',
+    ls_temperature: undefined,
+    ls_max_tokens: undefined,
+    ls_stop: undefined
+  }
+]

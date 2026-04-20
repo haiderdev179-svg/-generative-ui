@@ -70,7 +70,7 @@ export function initTools(database: DatabaseSync){
     const generateChart = tool(
         ({ from, to, groupBy }) => {
 
-            console.log('args: ', from, to, groupBy);
+            // console.log('args: ', from, to, groupBy);
 
             let sqlGroupBy : string;
 

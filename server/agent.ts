@@ -3,6 +3,7 @@ import {
   MemorySaver,
   MessagesAnnotation,
   StateGraph,
+  type LangGraphRunnableConfig,
 } from "@langchain/langgraph";
 import { ChatOpenAI, messageToOpenAIRole } from "@langchain/openai";
 import { initDB } from "./db.ts";
@@ -27,9 +28,15 @@ const llm = new ChatOpenAI({
 const toolNode = new ToolNode(tools);
 
 //2:Creating (Call-Model) node
-async function callModel(state: typeof MessagesAnnotation.State) {
+async function callModel(state: typeof MessagesAnnotation.State, config:  LangGraphRunnableConfig) {
   //Giving tool access to LLM
   const llmWithTools = llm.bindTools(tools);
+
+
+  //using custom events streaming 
+  config.writer?.(
+    `Calling LLM------`
+  );
 
   //Invoking the LLM and getting the response
   const response = await llmWithTools.invoke([
@@ -120,11 +127,11 @@ async function main() {
         //   content: "Hi",
           // content: "I bought an flowers for 2500pkr",
           // content: "how much i have spend total till date?",
-          content: "Can you visualize how much i spent this year till now group by week?",  
+          content: "Hi",  
         },
       ],
     },
-    { streamMode: 'updates',
+    { streamMode: ['updates', 'custom'],
       configurable: { thread_id: "1" } },
   );
   

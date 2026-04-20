@@ -1,0 +1,133 @@
+Chunk {
+  config: {
+    configurable: {
+      checkpoint_ns: '',
+      thread_id: '1',
+      checkpoint_id: '1f13cf88-de09-6e20-ffff-0c4ed41d9f48'
+    },
+    metadata: { thread_id: '1' },
+    recursion_limit: 25,
+    tags: []
+  },
+  values: { messages: [] },
+  metadata: { source: 'input', step: -1, parents: {} },
+  next: [ '__start__' ],
+  tasks: [
+    {
+      id: '28365c49-c6b6-5657-a91c-4191d540e729',
+      name: '__start__',
+      path: [Array],
+      interrupts: [],
+      result: undefined
+    }
+  ],
+  parentConfig: undefined
+}
+Chunk {
+  config: {
+    configurable: {
+      checkpoint_ns: '',
+      thread_id: '1',
+      checkpoint_id: '1f13cf88-de30-6f20-8000-a7b66fb1698b'
+    },
+    metadata: { thread_id: '1' },
+    recursion_limit: 25,
+    tags: []
+  },
+  values: {
+    messages: [
+      HumanMessage {
+        "id": "fa192203-2210-465d-b262-d40a85a5d714",
+        "content": "Hi",
+        "additional_kwargs": {},
+        "response_metadata": {}
+      }
+    ]
+  },
+  metadata: { source: 'loop', step: 0, parents: {} },
+  next: [ 'callModel' ],
+  tasks: [
+    {
+      id: '128f8ac1-2886-5ffb-a51e-d46987ce2135',
+      name: 'callModel',
+      path: [Array],
+      interrupts: [],
+      result: undefined
+    }
+  ],
+  parentConfig: {
+    configurable: {
+      checkpoint_ns: '',
+      thread_id: '1',
+      checkpoint_id: '1f13cf88-de09-6e20-ffff-0c4ed41d9f48'
+    },
+    metadata: { thread_id: '1' },
+    recursion_limit: 25,
+    tags: []
+  }
+}
+Chunk {
+  config: {
+    configurable: {
+      checkpoint_ns: '',
+      thread_id: '1',
+      checkpoint_id: '1f13cf88-f2f6-6540-8001-12563c65bbf6'
+    },
+    metadata: { thread_id: '1' },
+    recursion_limit: 25,
+    tags: []
+  },
+  values: {
+    messages: [
+      HumanMessage {
+        "id": "fa192203-2210-465d-b262-d40a85a5d714",
+        "content": "Hi",
+        "additional_kwargs": {},
+        "response_metadata": {}
+      },
+      AIMessage {
+        "id": "chatcmpl-DWpdhRGWjpP0qS1hEGzTt0qWD6yGh",
+        "content": "Hi — how can I help with your expenses today?",
+        "additional_kwargs": {},
+        "response_metadata": {
+          "tokenUsage": {
+            "promptTokens": 399,
+            "completionTokens": 20,
+            "totalTokens": 419
+          },
+          "finish_reason": "stop",
+          "model_provider": "openai",
+          "model_name": "gpt-5-mini-2025-08-07"
+        },
+        "tool_calls": [],
+        "invalid_tool_calls": [],
+        "usage_metadata": {
+          "output_tokens": 20,
+          "input_tokens": 399,
+          "total_tokens": 419,
+          "input_token_details": {
+            "audio": 0,
+            "cache_read": 0
+          },
+          "output_token_details": {
+            "audio": 0,
+            "reasoning": 0
+          }
+        }
+      }
+    ]
+  },
+  metadata: { source: 'loop', step: 1, parents: {} },
+  next: [],
+  tasks: [],
+  parentConfig: {
+    configurable: {
+      checkpoint_ns: '',
+      thread_id: '1',
+      checkpoint_id: '1f13cf88-de30-6f20-8000-a7b66fb1698b'
+    },
+    metadata: { thread_id: '1' },
+    recursion_limit: 25,
+    tags: []
+  }
+} 
