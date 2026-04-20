@@ -4,7 +4,7 @@ import {
   MessagesAnnotation,
   StateGraph,
 } from "@langchain/langgraph";
-import { ChatOpenAI } from "@langchain/openai";
+import { ChatOpenAI, messageToOpenAIRole } from "@langchain/openai";
 import { initDB } from "./db.ts";
 import { initTools } from "./tool.ts";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
@@ -112,7 +112,7 @@ const agent = graph.compile({
 
 //11:Creating main function
 async function main() {
-  const response = await agent.invoke(
+  const response = await agent.stream(
     {
       messages: [
         {
@@ -124,11 +124,13 @@ async function main() {
         },
       ],
     },
-    { configurable: { thread_id: "1" } },
+    { streamMode: 'updates',
+      configurable: { thread_id: "1" } },
   );
-
-  //gettig final response
-  console.log(JSON.stringify(response, null, 2));
-}
+  
+  for await (const chunk of response){
+      console.log("Chunk", chunk);
+  };
+};
 
 main();
