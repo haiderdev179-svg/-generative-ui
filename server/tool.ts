@@ -102,9 +102,22 @@ export function initTools(database: DatabaseSync){
             const stmt = database.prepare(query);
             const rows = stmt.all(from, to);
 
-            console.log('rows: ', rows)
+            // console.log('rows: ', rows)
 
-            return JSON.stringify(rows)
+           // -- Shadcn ui--
+            const chartData = [
+                { date: '2026-04-26', amount: 250 },
+            ];
+
+            const result = rows.map(row => {
+                return {
+                  [groupBy]: row.period,
+                  amount: row.total
+                }
+            });
+           // -- Shadcn ui--
+
+            return JSON.stringify({type: 'chart', data: result, labelKey: groupBy})
 
         },
         {

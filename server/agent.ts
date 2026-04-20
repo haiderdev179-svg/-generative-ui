@@ -8,7 +8,7 @@ import { ChatOpenAI } from "@langchain/openai";
 import { initDB } from "./db.ts";
 import { initTools } from "./tool.ts";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
-import type { AIMessage } from "@langchain/core/messages";
+import type { AIMessage, ToolMessage } from "@langchain/core/messages";
 
 //5:(Init database)
 const database = initDB("./expenses.db");
@@ -74,9 +74,22 @@ function shouldContinue(state: typeof MessagesAnnotation.State) {
 function shouldCallModel(state: typeof MessagesAnnotation.State) {
  
   //todo: change this when chart tool is implemented
+   //Getting last message
+   const messages = state.messages;
+   const lastMessage = messages.at(-1) as ToolMessage;
+
+   //converting the last message (string) into javascript
+   const message = JSON.parse(lastMessage.content as string);
+
+   if(message.type === 'chart'){
+      return END;
+   }
+
+
+
   return 'callModel';
 
-}
+};
 
 //8:Building the Graph
 const graph = new StateGraph(MessagesAnnotation)
@@ -89,6 +102,7 @@ const graph = new StateGraph(MessagesAnnotation)
   })
   .addConditionalEdges('tools', shouldCallModel, {
     callModel: "callModel",
+    [END]: END
   });
   
 //10:Compiling the graph
@@ -106,7 +120,7 @@ async function main() {
         //   content: "Hi",
           // content: "I bought an flowers for 2500pkr",
           // content: "how much i have spend total till date?",
-          content: "Can you visualize how much i spent this year till now group by week?",
+          content: "Can you visualize how much i spent this year till now group by week?",  
         },
       ],
     },
