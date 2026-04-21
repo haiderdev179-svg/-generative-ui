@@ -1,11 +1,7 @@
+import { ChatContainer } from './components/ChatContainer';
 
 function App() {
-
-  return (
-    <>
-    <h1 className="text-3xl text-blue-500 underline"><b>Welcome to Expense Tracker</b></h1>
-     </>
-  )
+  return <ChatContainer />;
 }
 
-export default App
+export default App;
