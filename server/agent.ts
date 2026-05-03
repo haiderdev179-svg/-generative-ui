@@ -113,31 +113,33 @@ const graph = new StateGraph(MessagesAnnotation)
   });
   
 //10:Compiling the graph
-const agent = graph.compile({
+export const agent = graph.compile({
   checkpointer: new MemorySaver(),
 });
 
 //11:Creating main function
-async function main() {
-  const response = await agent.stream(
-    {
-      messages: [
-        {
-          role: "user",
-        //   content: "Hi",
-          // content: "I bought an flowers for 2500pkr",
-          // content: "how much i have spend total till date?",
-          content: "Hi",  
-        },
-      ],
-    },
-    { streamMode: ['updates', 'custom'],
-      configurable: { thread_id: "1" } },
-  );
+// async function main() {
+//   const response = await agent.stream(
+//     {
+//       messages: [
+//         {
+//           role: "user",
+//         //   content: "Hi",
+//           // content: "I bought an flowers for 2500pkr",
+//           // content: "how much i have spend total till date?",
+//           content: 'hi',  
+//         },
+//       ],
+//     },
+//     { streamMode: ['messages'],
+//       //todo: generate dynamically
+//       configurable: { thread_id: "1" } },
+//   );
   
-  for await (const chunk of response){
-      console.log("Chunk", chunk);
-  };
-};
+//   for await (const [eventType, chunk] of response){
+//     console.log('eventType: ', eventType)
+//     console.log("Chunk", JSON.stringify(chunk[0].content, null, 2));
+//   };
+// };
 
-main();
+// main();

@@ -1,15 +1,13 @@
 import { useEffect, useRef, useState } from 'react';
-import { fetchEventSource } from '@microsoft/fetch-event-source';
 import { ChatInput } from './ChatInput.tsx';
 import { ChatMessage } from './ChatMessage.tsx';
 import type { StreamMessage } from '../type.ts';
 
 export function ChatContainer() {
   const messageEndRef = useRef<HTMLDivElement>(null);
+  const eventSourceRef = useRef<EventSource | null>(null);
 
-  const [messages, setMessages] = useState<StreamMessage[]>(
-    []
-  );
+  const [messages, setMessages] = useState<StreamMessage[]>([]);
 
   useEffect(() => {
     messageEndRef.current?.scrollIntoView({
@@ -17,7 +15,23 @@ export function ChatContainer() {
     });
   }, [messages]);
 
+  // Cleanup EventSource on unmount
+    useEffect(() => {
+    return () => {
+      if (eventSourceRef.current) {
+        eventSourceRef.current.close();
+      }
+    };
+  }, []);
+
   async function submitQuery(userInput: string) {
+    console.log('🚀 Submitting:', userInput);
+
+    // Close previous EventSource if exists
+    if (eventSourceRef.current) {
+      eventSourceRef.current.close();
+    }
+
     setMessages((prevMessages) => {
       return [
         ...prevMessages,
@@ -29,77 +43,43 @@ export function ChatContainer() {
       ];
     });
 
-    await fetchEventSource('http://localhost:4100/chat', {
-      onmessage(ev) {
-        // console.log(ev.event);
-        const parsedData = JSON.parse(
-          ev.data
-        ) as StreamMessage;
+    // Create new EventSource
+const response = await fetch('http://localhost:4100/chat', {
+  method: 'POST',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ message: userInput, threadId: '1' }),
+});
 
-        if (parsedData.type === 'ai') {
-          setMessages((prevMessages) => {
-            const lastMessage =
-              prevMessages[prevMessages.length - 1];
+const reader = response.body!.getReader();
+const decoder = new TextDecoder();
 
-            if (lastMessage && lastMessage.type === 'ai') {
-              // append to lat message
-              const clonedMessages = [...prevMessages];
+while (true) {
+  const { done, value } = await reader.read();
+  if (done) { console.log('Stream ended'); break; }
 
-              clonedMessages[clonedMessages.length - 1] = {
-                ...lastMessage,
-                payload: {
-                  text:
-                    lastMessage.payload.text +
-                    parsedData.payload.text,
-                },
-              };
+  const lines = decoder.decode(value).split('\n\n').filter(Boolean);
 
-              return clonedMessages;
-            } else {
-              return [
-                ...prevMessages,
-                {
-                  id: Date.now().toString(),
-                  type: 'ai',
-                  payload: parsedData.payload,
-                },
-              ];
-            }
-          });
+  for (const line of lines) {
+    if (!line.startsWith('data: ')) continue;
+    const parsed = JSON.parse(line.replace('data: ', '')) as StreamMessage;
+    console.log('📨 Received:', parsed);
 
-          // console.log(parsedData);
-        } else if (parsedData.type === 'toolCall:start') {
-          setMessages((prevMessages) => {
-            return [
-              ...prevMessages,
-              {
-                id: Date.now().toString(),
-                type: 'toolCall:start',
-                payload: parsedData.payload,
-              },
-            ];
-          });
-        } else if (parsedData.type === 'tool') {
-          setMessages((prevMessages) => {
-            return [
-              ...prevMessages,
-              {
-                id: Date.now().toString(),
-                type: 'tool',
-                payload: parsedData.payload,
-              },
-            ];
-          });
-        }
-      },
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify({ query: userInput }),
+    setMessages((prevMessages) => {
+      const lastMessage = prevMessages[prevMessages.length - 1];
+      if (lastMessage && lastMessage.type === 'ai') {
+        const clonedMessages = [...prevMessages];
+        clonedMessages[clonedMessages.length - 1] = {
+          ...lastMessage,
+          payload: { text: lastMessage.payload.text + parsed.payload.text },
+        };
+        return clonedMessages;
+      } else {
+        return [...prevMessages, { id: Date.now().toString(), type: 'ai', payload: parsed.payload }];
+      }
     });
   }
-
+}
+};
   const onSubmit = (userInput: string) => {
     console.log('user input', userInput);
     submitQuery(userInput);
@@ -210,7 +190,6 @@ export function ChatContainer() {
             </div>
           ) : (
             <div className="divide-y divide-zinc-800/50">
-              {/* Messages will be displayed here... */}
               {messages.map((message) => {
                 return (
                   <div key={message.id}>
