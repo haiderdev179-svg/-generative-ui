@@ -1,5 +1,5 @@
 import { User, Wrench } from 'lucide-react';
-import type { StreamMessage } from '../type.ts';
+import type { StreamMessage } from '../types.ts'
 import { ExpenseChart } from './ExpenseChart.tsx';
 
 type Props = {
@@ -13,7 +13,7 @@ export function ChatMessage({ message }: Props) {
           <div className="w-8 h-8 rounded-lg bg-linear-to-br from-white-500 via-white-500 to-gray-500 flex items-center justify-center shadow-lg">
             <User color="white" />
           </div>
-        </div>
+        </div> 
         <div className="flex-1 space-y-2 overflow-hidden">
           <div className="text-sm font-medium text-zinc-300">
             User
@@ -109,14 +109,17 @@ export function ChatMessage({ message }: Props) {
           </div>
 
           {message.payload.name ===
-            'generate_expense_chart' && (
+            'generate-expense-chart' && (
             <ExpenseChart
               chartData={message.payload.result.data}
               labelKey={message.payload.result.labelKey}
             />
+            // <span className='text-white'>
+            //   Rendering the chart...
+            // </span>
           )}
         </div>
       </div>
     );
   }
-}
+};

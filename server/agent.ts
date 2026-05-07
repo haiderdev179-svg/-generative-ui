@@ -10,6 +10,7 @@ import { initDB } from "./db.ts";
 import { initTools } from "./tool.ts";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import type { AIMessage, ToolMessage } from "@langchain/core/messages";
+import type { StreamMessage } from "./types.ts";
 
 //5:(Init database)
 const database = initDB("./expenses.db");
@@ -32,11 +33,6 @@ async function callModel(state: typeof MessagesAnnotation.State, config:  LangGr
   //Giving tool access to LLM
   const llmWithTools = llm.bindTools(tools);
 
-
-  //using custom events streaming 
-  config.writer?.(
-    `Calling LLM------`
-  );
 
   //Invoking the LLM and getting the response
   const response = await llmWithTools.invoke([
@@ -61,7 +57,7 @@ async function callModel(state: typeof MessagesAnnotation.State, config:  LangGr
 }
 
 //9:shouldContinue function for conditionalEdge from callModel to tool node or end
-function shouldContinue(state: typeof MessagesAnnotation.State) {
+function shouldContinue(state: typeof MessagesAnnotation.State, config: LangGraphRunnableConfig) {
   //getting the messages
   const messages = state.messages;
   //getting the last message
@@ -69,6 +65,18 @@ function shouldContinue(state: typeof MessagesAnnotation.State) {
   
   //Checking if tool_call happen through the last message we get
   if (lastMessage.tool_calls?.length) {
+
+    //we can send custom events here
+    const customMessage : StreamMessage = {
+      type: 'toolCall:start',
+      payload: {
+        name: lastMessage.tool_calls[0].name,
+        args: lastMessage.tool_calls[0].args,
+      }
+    };
+
+    config.writer!(customMessage)
+
     //if the the length is true it means tool call happen so we are routing to tool node
     return "tools";
   }

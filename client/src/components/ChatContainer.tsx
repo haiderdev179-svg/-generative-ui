@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import { ChatInput } from './ChatInput.tsx';
 import { ChatMessage } from './ChatMessage.tsx';
-import type { StreamMessage } from '../type.ts';
+import type { StreamMessage } from '../types.ts';
 
 export function ChatContainer() {
   const messageEndRef = useRef<HTMLDivElement>(null);
@@ -59,25 +59,43 @@ while (true) {
 
   const lines = decoder.decode(value).split('\n\n').filter(Boolean);
 
-  for (const line of lines) {
+for (const line of lines) {
     if (!line.startsWith('data: ')) continue;
     const parsed = JSON.parse(line.replace('data: ', '')) as StreamMessage;
     console.log('📨 Received:', parsed);
 
-    setMessages((prevMessages) => {
-      const lastMessage = prevMessages[prevMessages.length - 1];
-      if (lastMessage && lastMessage.type === 'ai') {
-        const clonedMessages = [...prevMessages];
-        clonedMessages[clonedMessages.length - 1] = {
-          ...lastMessage,
-          payload: { text: lastMessage.payload.text + parsed.payload.text },
-        };
-        return clonedMessages;
-      } else {
-        return [...prevMessages, { id: Date.now().toString(), type: 'ai', payload: parsed.payload }];
-      }
-    });
-  }
+    if (parsed.type === 'ai' && parsed.payload?.text) {
+        setMessages((prevMessages) => {
+            const lastMessage = prevMessages[prevMessages.length - 1];
+            if (lastMessage && lastMessage.type === 'ai') {
+                const clonedMessages = [...prevMessages];
+                clonedMessages[clonedMessages.length - 1] = {
+                    ...lastMessage,
+                    payload: { text: lastMessage.payload.text + parsed.payload.text },
+                };
+                return clonedMessages;
+            } else {
+                return [...prevMessages, { id: Date.now().toString(), type: 'ai', payload: parsed.payload }];
+            }
+        });
+
+    } else if (parsed.type === 'toolCall:start') {
+        setMessages((prevMessages) => [
+            ...prevMessages,
+            { id: Date.now().toString(), type: 'toolCall:start', payload: parsed.payload },
+        ]);
+    }
+    else if (parsed.type === 'tool') {
+    setMessages((prevMessages) => [
+        ...prevMessages,
+        { 
+            id: Date.now().toString(), 
+            type: 'tool', 
+            payload: parsed.payload 
+        },
+    ]);
+}
+}
 }
 };
   const onSubmit = (userInput: string) => {
