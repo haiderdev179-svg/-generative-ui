@@ -1,7 +1,9 @@
 import { tool } from "@langchain/core/tools";
 import type { DatabaseSync } from "node:sqlite";
 import z, { string } from "zod";
+import { initDB } from './db.ts';
 
+const db = initDB('./expenses.db'); // ← add this near the top
 
 
 //3:Creating tools for (Call-Model)
@@ -65,6 +67,68 @@ export function initTools(database: DatabaseSync){
                 to: z.string().describe('End date in YYYY-MM-DD format')
             }),
         });
+
+    //-- (delete expense tool)
+    const deleteExpense = tool(
+        ({ id }) => {
+            const statement = database.prepare(
+                `DELETE FROM expenses WHERE id = ?`
+            );
+            statement.run(id);
+            return JSON.stringify({ status: 'success', deletedId: id });
+        },
+        {
+            name: 'delete-expense',
+            description: 'Delete an expense from the database by its ID. First use get-expense to find the ID if user does not provide it.',
+            schema: z.object({
+                id: z.number().describe('The ID of the expense to delete'),
+            }),
+        }
+    );
+
+    //-- (update expense tool)
+    const updateExpense = tool(
+        ({ id, title, amount }) => {
+            // build query dynamically based on what's provided
+            const fields: string[] = [];
+            const values: (string | number)[] = [];
+
+            if (title) {
+                fields.push('title = ?');
+                values.push(title);
+            }
+
+            if (amount) {
+                fields.push('amount = ?');
+                values.push(amount);
+            }
+
+            if (fields.length === 0) {
+                return JSON.stringify({ status: 'error', message: 'No fields to update' });
+            }
+
+            // add id at the end for WHERE clause
+            values.push(id);
+
+            const statement = database.prepare(
+                `UPDATE expenses SET ${fields.join(', ')} WHERE id = ?`
+            );
+
+            statement.run(...values);
+
+            return JSON.stringify({ status: 'success', updatedId: id });
+        },
+        {
+            name: 'update-expense',
+            description: 'Update an existing expense title or amount by its ID. Use get-expense first to find the ID if user does not provide it.',
+            schema: z.object({
+                id: z.number().describe('The ID of the expense to update'),
+                title: z.string().optional().describe('New title for the expense'),
+                amount: z.string().optional().describe('New amount for the expense'),
+            }),
+        }
+    );
+
 
     //--13:(generate-chart)
     const generateChart = tool(
@@ -131,11 +195,8 @@ export function initTools(database: DatabaseSync){
             }),
         });
 
-
-
-
     //returning the tools
-    return [addExpense, getExpenses, generateChart]
+    return [addExpense, getExpenses, generateChart, deleteExpense, updateExpense];
 }
 
 
