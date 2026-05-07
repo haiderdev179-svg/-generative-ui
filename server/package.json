@@ -8,9 +8,10 @@
     "@types/express": "^5.0.6",
     "@types/node": "^25.3.0"
   },
- "scripts": {
+"scripts": {
     "dev": "node --env-file=.env server.ts",
-    "start": "node --env-file=.env server.ts"
+    "start": "node --env-file=.env server.ts",
+    "build": "echo 'no build needed'"
 },
   "peerDependencies": {
     "typescript": "^5"
