@@ -44,7 +44,8 @@ export function ChatContainer() {
     });
 
     // Create new EventSource
-const response = await fetch('http://localhost:4100/chat', {
+// const response = await fetch('http://localhost:4100/chat', {
+const response = await fetch('https://server-production-ddb4.up.railway.app/', {
   method: 'POST',
   headers: { 'Content-Type': 'application/json' },
   body: JSON.stringify({ message: userInput, threadId: '1' }),
