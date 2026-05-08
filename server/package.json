@@ -10,7 +10,7 @@
   },
 "scripts": {
     "dev": "node --env-file=.env server.ts",
-    "start": "node --env-file=.env server.ts",
+    "start": "node server.ts",
     "build": "echo 'no build needed'"
 },
   "peerDependencies": {
