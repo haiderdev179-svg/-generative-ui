@@ -4,7 +4,7 @@ import { agent } from './agent.ts'; // ← import your compiled agent
 import type { StreamMessage } from './types.ts';
 import { initDB } from './db.ts';
 const app = express();
-const db = initDB(':memory:'); // CHANGED: no persistent file, avoids read-only filesystem crash on Vercel
+const db = initDB(); // CHANGED: no argument needed, in-memory array now
 app.use(cors());
 app.use(express.json());
 app.get('/', (req, res) => {
