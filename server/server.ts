@@ -1,10 +1,10 @@
 import express from 'express';
 import cors from 'cors';
-import { agent } from './agent.ts'; // ← import your compiled agent
+import { agent } from './agent.js';
 import type { StreamMessage } from './types.ts';
-import { initDB } from './db.ts';
+import { initDB } from './db.js';
 const app = express();
-const db = initDB(); // CHANGED: no argument needed, in-memory array now
+const db = initDB();
 app.use(cors());
 app.use(express.json());
 app.get('/', (req, res) => {
@@ -46,7 +46,7 @@ app.post('/api/chat', async (req, res) => {
                         type: 'ai',
                         payload: { text: msgChunk.content as string }
                     };
-                } else if (msgChunk.type === 'tool') {  // ← was outside 'messages' block
+                } else if (msgChunk.type === 'tool') {
                     streamMessage = {
                         type: 'tool',
                         payload: {
@@ -55,7 +55,7 @@ app.post('/api/chat', async (req, res) => {
                         }
                     };
                 }
-            }                                           // ← was missing
+            }
             if (streamMessage && Object.keys(streamMessage).length > 0) {
                 res.write(`data: ${JSON.stringify(streamMessage)}\n\n`);
             }
@@ -73,10 +73,10 @@ app.delete('/expenses/:id', (req, res) => {
 });
 
 const PORT = 4100;
-if (!process.env.VERCEL) { // CHANGED: only run app.listen locally, not on Vercel
+if (!process.env.VERCEL) {
   app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
   });
 }
 
-export default app; // CHANGED: added so Vercel can import this as a serverless handler
+export default app;
