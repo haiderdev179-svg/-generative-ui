@@ -1,5 +1,15 @@
 {
   "name": "-generative-ui",
   "type": "module",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "@langchain/core": "^1.1.27",
+    "@langchain/langgraph": "^1.1.5",
+    "@langchain/openai": "^1.2.9",
+    "@microsoft/fetch-event-source": "^2.0.1",
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "sqlite3": "^5.1.7",
+    "zod": "^4.3.6"
+  }
 }
