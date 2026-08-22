@@ -10,7 +10,7 @@ app.use(express.json());
 app.get('/', (req, res) => {
     res.json({ message: 'OK' });
 });
-app.post('/chat', async (req, res) => {
+app.post('/api/chat', async (req, res) => {
     const { message, threadId } = req.body;
     console.log("✅ User Message:", message);
     // SSE headers
