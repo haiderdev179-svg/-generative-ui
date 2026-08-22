@@ -1,10 +1,7 @@
 import { tool } from "@langchain/core/tools";
 import type { DatabaseSync } from "node:sqlite";
 import z, { string } from "zod";
-import { initDB } from './db.ts';
-
-const db = initDB('./expenses.db'); // ← add this near the top
-
+import { initDB } from './db.js';
 
 //3:Creating tools for (Call-Model)
 
@@ -198,6 +195,3 @@ export function initTools(database: DatabaseSync){
     //returning the tools
     return [addExpense, getExpenses, generateChart, deleteExpense, updateExpense];
 }
-
-
-
