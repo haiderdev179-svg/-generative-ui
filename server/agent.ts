@@ -13,8 +13,7 @@ import type { AIMessage, ToolMessage } from "@langchain/core/messages";
 import type { StreamMessage } from "./types.ts";
 
 //5:(Init database)
-const database = initDB("./expenses.db");
-
+const database = initDB();
 //6:Giving tools access to database
 const tools = initTools(database);
 
