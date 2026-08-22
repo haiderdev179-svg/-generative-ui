@@ -1,19 +1,33 @@
-import { DatabaseSync } from "node:sqlite";
-
-//4:Initiaziling the Database
-export function initDB(dbPath: string): DatabaseSync {
-     const database = new DatabaseSync(dbPath);
-
-     const query = `
-      CREATE TABLE IF NOT EXISTS expenses (
-      id INTEGER PRIMARY KEY AUTOINCREMENT, 
-      title TEXT NOT NULL,
-      amount REAL NOT NULL,
-      date TEXT NOT NULL)
-     `
-
-     database.exec(query);
-
-     return database;
-
+type Expense = {
+  id: number;
+  title: string;
+  amount: number;
+  date: string;
 };
+
+let expenses: Expense[] = [];
+let nextId = 1;
+
+export function initDB() {
+  return {
+    prepare(query: string) {
+      return {
+        run(id: number) {
+          if (query.includes('DELETE')) {
+            expenses = expenses.filter(e => e.id !== id);
+          }
+        }
+      };
+    }
+  };
+}
+
+export function addExpense(title: string, amount: number, date: string) {
+  const expense = { id: nextId++, title, amount, date };
+  expenses.push(expense);
+  return expense;
+}
+
+export function getExpenses() {
+  return expenses;
+}
