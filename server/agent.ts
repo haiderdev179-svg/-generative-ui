@@ -6,8 +6,8 @@ import {
   type LangGraphRunnableConfig,
 } from "@langchain/langgraph";
 import { ChatOpenAI, messageToOpenAIRole } from "@langchain/openai";
-import { initDB } from "./db.ts";
-import { initTools } from "./tool.ts";
+import { initDB } from "./db.js";
+import { initTools } from "./tool.js";
 import { ToolNode } from "@langchain/langgraph/prebuilt";
 import type { AIMessage, ToolMessage } from "@langchain/core/messages";
 import type { StreamMessage } from "./types.ts";
