@@ -3,38 +3,25 @@ import cors from 'cors';
 import { agent } from './agent.ts'; // ← import your compiled agent
 import type { StreamMessage } from './types.ts';
 import { initDB } from './db.ts';
-
-
 const app = express();
-const db = initDB('./expenses.db'); // ← add this near the top
-
+const db = initDB(':memory:'); // CHANGED: no persistent file, avoids read-only filesystem crash on Vercel
 app.use(cors());
 app.use(express.json());
-
 app.get('/', (req, res) => {
     res.json({ message: 'OK' });
 });
-
-
-
 app.post('/chat', async (req, res) => {
     const { message, threadId } = req.body;
     console.log("✅ User Message:", message);
-
     // SSE headers
     res.setHeader('Content-Type', 'text/event-stream');
     res.setHeader('Cache-Control', 'no-cache');
     res.setHeader('Connection', 'keep-alive');
-
     // ✅ Add this - flushes headers immediately so client stays connected
     res.flushHeaders();
-
-
-
     req.on('close', () => {
         console.log("⚠️ Client disconnected");
     });
-
     try {
         const response = await agent.stream(
             {
@@ -45,19 +32,15 @@ app.post('/chat', async (req, res) => {
                 configurable: { thread_id: threadId ?? "1" },
             }
         );
-
         for await (const [eventType, chunk] of response) {
             console.log('eventType: ', eventType);
-
             let streamMessage: StreamMessage | null = null;
-
             if (eventType === "custom") {
                 console.log('chunk: ', chunk);
                 streamMessage = chunk;
             } else if (eventType === 'messages') {
                 if (chunk[0].content === '') continue;
                 const msgChunk = chunk[0];
-
                 if (msgChunk.type === 'ai' && msgChunk.content) {
                     streamMessage = {
                         type: 'ai',
@@ -73,7 +56,6 @@ app.post('/chat', async (req, res) => {
                     };
                 }
             }                                           // ← was missing
-
             if (streamMessage && Object.keys(streamMessage).length > 0) {
                 res.write(`data: ${JSON.stringify(streamMessage)}\n\n`);
             }
@@ -84,7 +66,6 @@ app.post('/chat', async (req, res) => {
         res.end();
     };
 }); 
-
 app.delete('/expenses/:id', (req, res) => {
     const { id } = req.params;
     db.prepare('DELETE FROM expenses WHERE id = ?').run(id);
@@ -92,6 +73,10 @@ app.delete('/expenses/:id', (req, res) => {
 });
 
 const PORT = 4100;
-app.listen(PORT, () => {
+if (!process.env.VERCEL) { // CHANGED: only run app.listen locally, not on Vercel
+  app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
-});
+  });
+}
+
+export default app; // CHANGED: added so Vercel can import this as a serverless handler
